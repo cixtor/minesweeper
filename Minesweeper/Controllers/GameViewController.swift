@@ -8,39 +8,56 @@
 
 import UIKit
 import SpriteKit
-import GameplayKit
+
+extension SKNode {
+    class func unarchiveFromFile(file : NSString) -> SKNode? {
+        if let path = Bundle.main.path(forResource: file as String, ofType: "sks") {
+            do {
+                let sceneData = try NSData.init(contentsOfFile: path, options: NSData.ReadingOptions.mappedIfSafe)
+                let archiver = NSKeyedUnarchiver(forReadingWith: sceneData as Data)
+                archiver.setClass(self.classForKeyedUnarchiver(), forClassName: "SKScene")
+                let scene = archiver.decodeObject(forKey: NSKeyedArchiveRootObjectKey) as! GameScene
+                archiver.finishDecoding()
+                return scene
+            } catch {
+                print("Scene Data error")
+            }
+        }
+
+        return nil
+    }
+}
 
 class GameViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if let view = self.view as! SKView? {
-            // Load the SKScene from 'GameScene.sks'
-            if let scene = SKScene(fileNamed: "GameScene") {
-                // Set the scale mode to scale to fit the window
-                scene.scaleMode = .aspectFill
-                
-                // Present the scene
-                view.presentScene(scene)
-            }
+
+        if let scene = GameScene.unarchiveFromFile(file: "GameScene") as? GameScene {
+            // Configure the view.
+            let skView = self.view as! SKView
+            skView.showsFPS = true
+            skView.showsNodeCount = true
             
-            view.ignoresSiblingOrder = true
+            /* Sprite Kit applies additional optimizations to improve rendering performance */
+            skView.ignoresSiblingOrder = true
             
-            view.showsFPS = true
-            view.showsNodeCount = true
+            /* Set the scale mode to scale to fit the window */
+            scene.scaleMode = .aspectFill
+            
+            skView.presentScene(scene)
         }
     }
 
-    override var shouldAutorotate: Bool {
+    func shouldAutorotate() -> Bool {
         return true
     }
 
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+    func supportedInterfaceOrientations() -> Int {
         if UIDevice.current.userInterfaceIdiom == .phone {
-            return .allButUpsideDown
+            return Int(UIInterfaceOrientationMask.allButUpsideDown.rawValue)
         } else {
-            return .all
+            return Int(UIInterfaceOrientationMask.all.rawValue)
         }
     }
 
@@ -49,7 +66,7 @@ class GameViewController: UIViewController {
         // Release any cached data, images, etc that aren't in use.
     }
 
-    override var prefersStatusBarHidden: Bool {
+    func prefersStatusBarHidden() -> Bool {
         return true
     }
 }
