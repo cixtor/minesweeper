@@ -16,6 +16,9 @@
 		8100A2F120D43EA000DEFF44 /* GameOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8100A2EF20D43E9F00DEFF44 /* GameOver.swift */; };
 		8100A2F220D43EA000DEFF44 /* GameLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8100A2F020D43EA000DEFF44 /* GameLogic.swift */; };
 		8100A2F520D43F1800DEFF44 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8100A2F320D43F1800DEFF44 /* LaunchScreen.xib */; };
+		8192B4A120DCB18B00F918D2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8192B4A020DCB18B00F918D2 /* Constants.swift */; };
+		8192B4A420DCB22D00F918D2 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8192B4A320DCB22D00F918D2 /* UIView.swift */; };
+		8192B4A620DCB27F00F918D2 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8192B4A520DCB27F00F918D2 /* UIColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		8100A2EF20D43E9F00DEFF44 /* GameOver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOver.swift; sourceTree = "<group>"; };
 		8100A2F020D43EA000DEFF44 /* GameLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameLogic.swift; sourceTree = "<group>"; };
 		8100A2F420D43F1800DEFF44 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		8192B4A020DCB18B00F918D2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		8192B4A320DCB22D00F918D2 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		8192B4A520DCB27F00F918D2 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +68,7 @@
 		8100A2CD20D42AD000DEFF44 /* Minesweeper */ = {
 			isa = PBXGroup;
 			children = (
+				8192B4A220DCB19200F918D2 /* Support */,
 				8100A2E820D42B7D00DEFF44 /* Controllers */,
 				8100A2E620D42B6D00DEFF44 /* Views */,
 				8100A2DB20D42AD200DEFF44 /* Assets.xcassets */,
@@ -90,6 +97,16 @@
 				8100A2D620D42AD100DEFF44 /* GameViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		8192B4A220DCB19200F918D2 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				8192B4A020DCB18B00F918D2 /* Constants.swift */,
+				8192B4A320DCB22D00F918D2 /* UIView.swift */,
+				8192B4A520DCB27F00F918D2 /* UIColor.swift */,
+			);
+			path = Support;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,6 +186,9 @@
 				8100A2CF20D42AD000DEFF44 /* AppDelegate.swift in Sources */,
 				8100A2F220D43EA000DEFF44 /* GameLogic.swift in Sources */,
 				8100A2F120D43EA000DEFF44 /* GameOver.swift in Sources */,
+				8192B4A620DCB27F00F918D2 /* UIColor.swift in Sources */,
+				8192B4A120DCB18B00F918D2 /* Constants.swift in Sources */,
+				8192B4A420DCB22D00F918D2 /* UIView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
