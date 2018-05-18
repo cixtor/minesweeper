@@ -1,30 +1,170 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="LVB-YS-i5n">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DDu-81-gD4">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="font-digital-7-mono.ttf">
+            <string>Digital-7Mono</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Game View Controller-->
-        <scene sceneID="CtS-rA-C9T">
+        <scene sceneID="I5j-ff-uuZ">
             <objects>
-                <viewController id="LVB-YS-i5n" customClass="GameViewController" customModule="Minesweeper" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="PCf-gQ-wO7"/>
-                        <viewControllerLayoutGuide type="bottom" id="b3d-qh-BLL"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="bdc-N1-crn" customClass="SKView">
+                <viewController id="cKM-BE-w3S" customClass="GameViewController" customModule="CherryBombSweeper" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="BTW-RZ-51A">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" delaysContentTouches="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b5B-6w-8p9" customClass="FieldGridScrollView" customModule="CherryBombSweeper" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="112" width="375" height="555"/>
+                            </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lh7-Kx-vxV" userLabel="Controls Container">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="112"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WvL-IU-jSd" userLabel="Stats Container">
+                                        <rect key="frame" x="0.0" y="64" width="375" height="48"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IBH-w7-m0i" userLabel="Options">
+                                                <rect key="frame" x="16" y="4" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="quY-kq-zza"/>
+                                                    <constraint firstAttribute="height" constant="40" id="tsj-hA-eUe"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <state key="normal" image="gear-icon">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="onOptionsPressed:" destination="cKM-BE-w3S" eventType="touchUpInside" id="HIB-G9-tor"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B1e-lm-PzS" userLabel="Timer">
+                                                <rect key="frame" x="55" y="13" width="109.5" height="23"/>
+                                                <fontDescription key="fontDescription" name="Digital-7Mono" family="Digital-7 Mono" pointSize="25"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleAspectFit" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8c0-Ri-wWo" userLabel="New Game">
+                                                <rect key="frame" x="164.5" y="1" width="46" height="46"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="46" id="ImC-nG-vBV"/>
+                                                    <constraint firstAttribute="height" constant="46" id="aAR-Bm-eb6"/>
+                                                </constraints>
+                                                <state key="normal" image="cherry-bomb-icon">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="onNewGamePressed:" destination="cKM-BE-w3S" eventType="touchUpInside" id="Kij-AV-So7"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="otB-5h-P9O" userLabel="Mine Count">
+                                                <rect key="frame" x="266" y="24" width="0.0" height="0.0"/>
+                                                <fontDescription key="fontDescription" name="Digital-7Mono" family="Digital-7 Mono" pointSize="25"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rdf-kh-KOT" userLabel="Action Mode">
+                                                <rect key="frame" x="319" y="4" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="Vfs-XW-aCi"/>
+                                                    <constraint firstAttribute="width" constant="40" id="XMk-vE-jwR"/>
+                                                </constraints>
+                                                <state key="normal" image="shovel-icon">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="onActionModePressed:" destination="cKM-BE-w3S" eventType="touchUpInside" id="CgO-bB-9EM"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="otB-5h-P9O" firstAttribute="centerY" secondItem="8c0-Ri-wWo" secondAttribute="centerY" id="0Lq-0X-I30"/>
+                                            <constraint firstItem="IBH-w7-m0i" firstAttribute="leading" secondItem="WvL-IU-jSd" secondAttribute="leading" constant="16" id="9im-vh-mnn"/>
+                                            <constraint firstItem="B1e-lm-PzS" firstAttribute="centerX" secondItem="8c0-Ri-wWo" secondAttribute="centerX" multiplier="0.5" constant="16" id="De9-Fz-Z5B"/>
+                                            <constraint firstItem="IBH-w7-m0i" firstAttribute="centerY" secondItem="WvL-IU-jSd" secondAttribute="centerY" id="Im1-cC-d3G"/>
+                                            <constraint firstItem="otB-5h-P9O" firstAttribute="centerX" secondItem="8c0-Ri-wWo" secondAttribute="centerX" multiplier="1.5" constant="-16" id="ImE-yW-e5t"/>
+                                            <constraint firstItem="B1e-lm-PzS" firstAttribute="centerY" secondItem="8c0-Ri-wWo" secondAttribute="centerY" id="KyE-4a-L9S"/>
+                                            <constraint firstItem="Rdf-kh-KOT" firstAttribute="trailing" secondItem="WvL-IU-jSd" secondAttribute="trailing" constant="-16" id="OeK-kH-d6e"/>
+                                            <constraint firstItem="8c0-Ri-wWo" firstAttribute="centerY" secondItem="WvL-IU-jSd" secondAttribute="centerY" id="QKJ-oU-req"/>
+                                            <constraint firstAttribute="height" constant="48" id="fEp-lM-XXy" userLabel="height = 48"/>
+                                            <constraint firstItem="8c0-Ri-wWo" firstAttribute="centerX" secondItem="WvL-IU-jSd" secondAttribute="centerX" id="ldi-Fd-1fz"/>
+                                            <constraint firstItem="Rdf-kh-KOT" firstAttribute="centerY" secondItem="WvL-IU-jSd" secondAttribute="centerY" id="rGT-um-X39"/>
+                                            <constraint firstItem="8c0-Ri-wWo" firstAttribute="leading" secondItem="B1e-lm-PzS" secondAttribute="trailing" id="sjL-T4-ilD"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="WvL-IU-jSd" firstAttribute="trailing" secondItem="lh7-Kx-vxV" secondAttribute="trailing" id="IJG-4G-xUb"/>
+                                    <constraint firstItem="WvL-IU-jSd" firstAttribute="bottom" secondItem="lh7-Kx-vxV" secondAttribute="bottom" id="wPM-Wb-kTT"/>
+                                    <constraint firstItem="WvL-IU-jSd" firstAttribute="leading" secondItem="lh7-Kx-vxV" secondAttribute="leading" id="zb7-Jt-2pT"/>
+                                </constraints>
+                            </view>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gear-icon" translatesAutoresizingMaskIntoConstraints="NO" id="NO2-aF-Pf2" userLabel="Splash Image">
+                                <rect key="frame" x="157.5" y="335.5" width="60" height="60"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="b5B-6w-8p9" firstAttribute="leading" secondItem="j0N-IV-Ns1" secondAttribute="leading" id="6yt-4Z-TUn"/>
+                            <constraint firstItem="lh7-Kx-vxV" firstAttribute="trailing" secondItem="BTW-RZ-51A" secondAttribute="trailing" id="8WT-6V-b46"/>
+                            <constraint firstItem="b5B-6w-8p9" firstAttribute="bottom" secondItem="j0N-IV-Ns1" secondAttribute="bottom" id="Q9g-Vt-gAo"/>
+                            <constraint firstItem="NO2-aF-Pf2" firstAttribute="centerY" secondItem="j0N-IV-Ns1" secondAttribute="centerY" id="cUL-2k-uJR"/>
+                            <constraint firstItem="WvL-IU-jSd" firstAttribute="top" secondItem="j0N-IV-Ns1" secondAttribute="top" id="cn6-hP-2ND"/>
+                            <constraint firstItem="b5B-6w-8p9" firstAttribute="top" secondItem="lh7-Kx-vxV" secondAttribute="bottom" id="cqd-Iu-mFx"/>
+                            <constraint firstItem="lh7-Kx-vxV" firstAttribute="leading" secondItem="BTW-RZ-51A" secondAttribute="leading" id="e6H-pc-b3W"/>
+                            <constraint firstItem="b5B-6w-8p9" firstAttribute="trailing" secondItem="j0N-IV-Ns1" secondAttribute="trailing" id="fis-1H-7ML"/>
+                            <constraint firstItem="lh7-Kx-vxV" firstAttribute="top" secondItem="BTW-RZ-51A" secondAttribute="top" id="vBf-ZZ-ZVD"/>
+                            <constraint firstItem="NO2-aF-Pf2" firstAttribute="centerX" secondItem="j0N-IV-Ns1" secondAttribute="centerX" id="wJE-Tf-nYk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="j0N-IV-Ns1"/>
                     </view>
+                    <navigationItem key="navigationItem" id="4fb-q4-X5C"/>
+                    <connections>
+                        <outlet property="actionModeButton" destination="Rdf-kh-KOT" id="R17-wz-3nQ"/>
+                        <outlet property="controlsContainer" destination="lh7-Kx-vxV" id="4uv-E2-ddc"/>
+                        <outlet property="mineCountLabel" destination="otB-5h-P9O" id="QLe-LB-HRW"/>
+                        <outlet property="mineFieldView" destination="b5B-6w-8p9" id="CWH-as-apu"/>
+                        <outlet property="newGameButton" destination="8c0-Ri-wWo" id="nFZ-sv-FTX"/>
+                        <outlet property="splashImage" destination="NO2-aF-Pf2" id="vWF-T5-M1V"/>
+                        <outlet property="statsContainer" destination="WvL-IU-jSd" id="9zN-J5-iIV"/>
+                        <outlet property="timerLabel" destination="B1e-lm-PzS" id="dJ3-ba-K8f"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="btX-cZ-eVz" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fnB-NC-xa2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="265" y="38"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="d2W-rY-uli">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DDu-81-gD4" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3KP-II-KgZ">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="cKM-BE-w3S" kind="relationship" relationship="rootViewController" id="78S-pr-aZJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="62V-QJ-DTt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-804" y="38.23088455772114"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="cherry-bomb-icon" width="60" height="60"/>
+        <image name="gear-icon" width="60" height="60"/>
+        <image name="shovel-icon" width="60" height="60"/>
+    </resources>
 </document>
