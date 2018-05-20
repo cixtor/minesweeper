@@ -17,6 +17,7 @@
 		8117CB4220DCB7E400677D8F /* Database.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8117CB4020DCB7E400677D8F /* Database.xcdatamodeld */; };
 		8156B09420DCBC5E004303C0 /* GameGeneratorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8156B09320DCBC5E004303C0 /* GameGeneratorService.swift */; };
 		8156B09720DCBD8B004303C0 /* GameProcessingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8156B09620DCBD8B004303C0 /* GameProcessingService.swift */; };
+		8156B09920DCBDDC004303C0 /* GameIconsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8156B09820DCBDDC004303C0 /* GameIconsService.swift */; };
 		8192B4A120DCB18B00F918D2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8192B4A020DCB18B00F918D2 /* Constants.swift */; };
 		8192B4A420DCB22D00F918D2 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8192B4A320DCB22D00F918D2 /* UIView.swift */; };
 		8192B4A620DCB27F00F918D2 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8192B4A520DCB27F00F918D2 /* UIColor.swift */; };
@@ -39,6 +40,7 @@
 		8117CB4120DCB7E400677D8F /* Database.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Database.xcdatamodel; sourceTree = "<group>"; };
 		8156B09320DCBC5E004303C0 /* GameGeneratorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameGeneratorService.swift; sourceTree = "<group>"; };
 		8156B09620DCBD8B004303C0 /* GameProcessingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameProcessingService.swift; sourceTree = "<group>"; };
+		8156B09820DCBDDC004303C0 /* GameIconsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameIconsService.swift; sourceTree = "<group>"; };
 		8192B4A020DCB18B00F918D2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8192B4A320DCB22D00F918D2 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		8192B4A520DCB27F00F918D2 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 			children = (
 				8156B09320DCBC5E004303C0 /* GameGeneratorService.swift */,
 				8156B09620DCBD8B004303C0 /* GameProcessingService.swift */,
+				8156B09820DCBDDC004303C0 /* GameIconsService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -210,6 +213,7 @@
 				8156B09720DCBD8B004303C0 /* GameProcessingService.swift in Sources */,
 				8100A2D720D42AD100DEFF44 /* GameViewController.swift in Sources */,
 				8100A2CF20D42AD000DEFF44 /* AppDelegate.swift in Sources */,
+				8156B09920DCBDDC004303C0 /* GameIconsService.swift in Sources */,
 				8100A2F220D43EA000DEFF44 /* GameLogic.swift in Sources */,
 				8117CB4220DCB7E400677D8F /* Database.xcdatamodeld in Sources */,
 				8100A2F120D43EA000DEFF44 /* GameOver.swift in Sources */,
