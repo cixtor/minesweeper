@@ -19,6 +19,7 @@
 		8156B09720DCBD8B004303C0 /* GameProcessingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8156B09620DCBD8B004303C0 /* GameProcessingService.swift */; };
 		8156B09920DCBDDC004303C0 /* GameIconsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8156B09820DCBDDC004303C0 /* GameIconsService.swift */; };
 		8156B09B20DCBE71004303C0 /* PersistableService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8156B09A20DCBE71004303C0 /* PersistableService.swift */; };
+		8156B09D20DCC414004303C0 /* AudioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8156B09C20DCC414004303C0 /* AudioService.swift */; };
 		8192B4A120DCB18B00F918D2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8192B4A020DCB18B00F918D2 /* Constants.swift */; };
 		8192B4A420DCB22D00F918D2 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8192B4A320DCB22D00F918D2 /* UIView.swift */; };
 		8192B4A620DCB27F00F918D2 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8192B4A520DCB27F00F918D2 /* UIColor.swift */; };
@@ -43,6 +44,7 @@
 		8156B09620DCBD8B004303C0 /* GameProcessingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameProcessingService.swift; sourceTree = "<group>"; };
 		8156B09820DCBDDC004303C0 /* GameIconsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameIconsService.swift; sourceTree = "<group>"; };
 		8156B09A20DCBE71004303C0 /* PersistableService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistableService.swift; sourceTree = "<group>"; };
+		8156B09C20DCC414004303C0 /* AudioService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioService.swift; sourceTree = "<group>"; };
 		8192B4A020DCB18B00F918D2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8192B4A320DCB22D00F918D2 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		8192B4A520DCB27F00F918D2 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
@@ -120,9 +122,10 @@
 		8156B09520DCBCCB004303C0 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				8156B09C20DCC414004303C0 /* AudioService.swift */,
 				8156B09320DCBC5E004303C0 /* GameGeneratorService.swift */,
-				8156B09620DCBD8B004303C0 /* GameProcessingService.swift */,
 				8156B09820DCBDDC004303C0 /* GameIconsService.swift */,
+				8156B09620DCBD8B004303C0 /* GameProcessingService.swift */,
 				8156B09A20DCBE71004303C0 /* PersistableService.swift */,
 			);
 			path = Services;
@@ -224,6 +227,7 @@
 				8192B4A620DCB27F00F918D2 /* UIColor.swift in Sources */,
 				8192B4A120DCB18B00F918D2 /* Constants.swift in Sources */,
 				8192B4A420DCB22D00F918D2 /* UIView.swift in Sources */,
+				8156B09D20DCC414004303C0 /* AudioService.swift in Sources */,
 				8156B09420DCBC5E004303C0 /* GameGeneratorService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
