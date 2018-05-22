@@ -32,6 +32,7 @@
 		8156B0B320DCC593004303C0 /* beep_beep_sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8156B0A820DCC593004303C0 /* beep_beep_sound.mp3 */; };
 		8156B0B420DCC593004303C0 /* bkg_music_1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8156B0A920DCC593004303C0 /* bkg_music_1.mp3 */; };
 		8156B0B620DCC5FC004303C0 /* probe_sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8156B0B520DCC5FC004303C0 /* probe_sound.wav */; };
+		8156B0B820DCC696004303C0 /* AudioOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8156B0B720DCC696004303C0 /* AudioOptions.swift */; };
 		8192B4A120DCB18B00F918D2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8192B4A020DCB18B00F918D2 /* Constants.swift */; };
 		8192B4A420DCB22D00F918D2 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8192B4A320DCB22D00F918D2 /* UIView.swift */; };
 		8192B4A620DCB27F00F918D2 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8192B4A520DCB27F00F918D2 /* UIColor.swift */; };
@@ -69,6 +70,7 @@
 		8156B0A820DCC593004303C0 /* beep_beep_sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = beep_beep_sound.mp3; sourceTree = "<group>"; };
 		8156B0A920DCC593004303C0 /* bkg_music_1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bkg_music_1.mp3; sourceTree = "<group>"; };
 		8156B0B520DCC5FC004303C0 /* probe_sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = probe_sound.wav; sourceTree = "<group>"; };
+		8156B0B720DCC696004303C0 /* AudioOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioOptions.swift; sourceTree = "<group>"; };
 		8192B4A020DCB18B00F918D2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8192B4A320DCB22D00F918D2 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		8192B4A520DCB27F00F918D2 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				8100A2E620D42B6D00DEFF44 /* Views */,
 				8100A2DB20D42AD200DEFF44 /* Assets.xcassets */,
 				8117CB4020DCB7E400677D8F /* Database.xcdatamodeld */,
+				8156B0B720DCC696004303C0 /* AudioOptions.swift */,
 				8100A2E020D42AD200DEFF44 /* Info.plist */,
 			);
 			path = Minesweeper;
@@ -279,6 +282,7 @@
 				8156B09920DCBDDC004303C0 /* GameIconsService.swift in Sources */,
 				8100A2F220D43EA000DEFF44 /* GameLogic.swift in Sources */,
 				8117CB4220DCB7E400677D8F /* Database.xcdatamodeld in Sources */,
+				8156B0B820DCC696004303C0 /* AudioOptions.swift in Sources */,
 				8100A2F120D43EA000DEFF44 /* GameOver.swift in Sources */,
 				8192B4A620DCB27F00F918D2 /* UIColor.swift in Sources */,
 				8192B4A120DCB18B00F918D2 /* Constants.swift in Sources */,
