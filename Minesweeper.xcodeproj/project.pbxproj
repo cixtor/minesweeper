@@ -20,6 +20,18 @@
 		8156B09920DCBDDC004303C0 /* GameIconsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8156B09820DCBDDC004303C0 /* GameIconsService.swift */; };
 		8156B09B20DCBE71004303C0 /* PersistableService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8156B09A20DCBE71004303C0 /* PersistableService.swift */; };
 		8156B09D20DCC414004303C0 /* AudioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8156B09C20DCC414004303C0 /* AudioService.swift */; };
+		8156B0AA20DCC593004303C0 /* flag_sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8156B09F20DCC593004303C0 /* flag_sound.mp3 */; };
+		8156B0AB20DCC593004303C0 /* reveal_sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8156B0A020DCC593004303C0 /* reveal_sound.mp3 */; };
+		8156B0AC20DCC593004303C0 /* winning_music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8156B0A120DCC593004303C0 /* winning_music.mp3 */; };
+		8156B0AD20DCC593004303C0 /* explosion_sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8156B0A220DCC593004303C0 /* explosion_sound.mp3 */; };
+		8156B0AE20DCC593004303C0 /* select_sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8156B0A320DCC593004303C0 /* select_sound.mp3 */; };
+		8156B0AF20DCC593004303C0 /* bkg_music_2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8156B0A420DCC593004303C0 /* bkg_music_2.mp3 */; };
+		8156B0B020DCC593004303C0 /* save_config_sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8156B0A520DCC593004303C0 /* save_config_sound.mp3 */; };
+		8156B0B120DCC593004303C0 /* positive_sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8156B0A620DCC593004303C0 /* positive_sound.mp3 */; };
+		8156B0B220DCC593004303C0 /* tap_sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8156B0A720DCC593004303C0 /* tap_sound.mp3 */; };
+		8156B0B320DCC593004303C0 /* beep_beep_sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8156B0A820DCC593004303C0 /* beep_beep_sound.mp3 */; };
+		8156B0B420DCC593004303C0 /* bkg_music_1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8156B0A920DCC593004303C0 /* bkg_music_1.mp3 */; };
+		8156B0B620DCC5FC004303C0 /* probe_sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8156B0B520DCC5FC004303C0 /* probe_sound.wav */; };
 		8192B4A120DCB18B00F918D2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8192B4A020DCB18B00F918D2 /* Constants.swift */; };
 		8192B4A420DCB22D00F918D2 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8192B4A320DCB22D00F918D2 /* UIView.swift */; };
 		8192B4A620DCB27F00F918D2 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8192B4A520DCB27F00F918D2 /* UIColor.swift */; };
@@ -45,6 +57,18 @@
 		8156B09820DCBDDC004303C0 /* GameIconsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameIconsService.swift; sourceTree = "<group>"; };
 		8156B09A20DCBE71004303C0 /* PersistableService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistableService.swift; sourceTree = "<group>"; };
 		8156B09C20DCC414004303C0 /* AudioService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioService.swift; sourceTree = "<group>"; };
+		8156B09F20DCC593004303C0 /* flag_sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = flag_sound.mp3; sourceTree = "<group>"; };
+		8156B0A020DCC593004303C0 /* reveal_sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = reveal_sound.mp3; sourceTree = "<group>"; };
+		8156B0A120DCC593004303C0 /* winning_music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = winning_music.mp3; sourceTree = "<group>"; };
+		8156B0A220DCC593004303C0 /* explosion_sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = explosion_sound.mp3; sourceTree = "<group>"; };
+		8156B0A320DCC593004303C0 /* select_sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = select_sound.mp3; sourceTree = "<group>"; };
+		8156B0A420DCC593004303C0 /* bkg_music_2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bkg_music_2.mp3; sourceTree = "<group>"; };
+		8156B0A520DCC593004303C0 /* save_config_sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = save_config_sound.mp3; sourceTree = "<group>"; };
+		8156B0A620DCC593004303C0 /* positive_sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = positive_sound.mp3; sourceTree = "<group>"; };
+		8156B0A720DCC593004303C0 /* tap_sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tap_sound.mp3; sourceTree = "<group>"; };
+		8156B0A820DCC593004303C0 /* beep_beep_sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = beep_beep_sound.mp3; sourceTree = "<group>"; };
+		8156B0A920DCC593004303C0 /* bkg_music_1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bkg_music_1.mp3; sourceTree = "<group>"; };
+		8156B0B520DCC5FC004303C0 /* probe_sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = probe_sound.wav; sourceTree = "<group>"; };
 		8192B4A020DCB18B00F918D2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8192B4A320DCB22D00F918D2 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		8192B4A520DCB27F00F918D2 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
@@ -85,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				8100A2E820D42B7D00DEFF44 /* Controllers */,
+				8156B09E20DCC564004303C0 /* Resources */,
 				8156B09520DCBCCB004303C0 /* Services */,
 				8192B4A220DCB19200F918D2 /* Support */,
 				8100A2E620D42B6D00DEFF44 /* Views */,
@@ -129,6 +154,25 @@
 				8156B09A20DCBE71004303C0 /* PersistableService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		8156B09E20DCC564004303C0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8156B0A820DCC593004303C0 /* beep_beep_sound.mp3 */,
+				8156B0A920DCC593004303C0 /* bkg_music_1.mp3 */,
+				8156B0A420DCC593004303C0 /* bkg_music_2.mp3 */,
+				8156B0A220DCC593004303C0 /* explosion_sound.mp3 */,
+				8156B09F20DCC593004303C0 /* flag_sound.mp3 */,
+				8156B0A620DCC593004303C0 /* positive_sound.mp3 */,
+				8156B0B520DCC5FC004303C0 /* probe_sound.wav */,
+				8156B0A020DCC593004303C0 /* reveal_sound.mp3 */,
+				8156B0A520DCC593004303C0 /* save_config_sound.mp3 */,
+				8156B0A320DCC593004303C0 /* select_sound.mp3 */,
+				8156B0A720DCC593004303C0 /* tap_sound.mp3 */,
+				8156B0A120DCC593004303C0 /* winning_music.mp3 */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		8192B4A220DCB19200F918D2 /* Support */ = {
@@ -199,12 +243,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8156B0B320DCC593004303C0 /* beep_beep_sound.mp3 in Resources */,
+				8156B0B620DCC5FC004303C0 /* probe_sound.wav in Resources */,
+				8156B0B420DCC593004303C0 /* bkg_music_1.mp3 in Resources */,
 				8100A2DA20D42AD100DEFF44 /* Main.storyboard in Resources */,
+				8156B0B220DCC593004303C0 /* tap_sound.mp3 in Resources */,
 				8192B4B120DCB49400F918D2 /* CreditsViewController.xib in Resources */,
 				8192B4B220DCB49400F918D2 /* OptionsViewController.xib in Resources */,
+				8156B0AA20DCC593004303C0 /* flag_sound.mp3 in Resources */,
 				8192B4A920DCB45F00F918D2 /* LaunchScreen.storyboard in Resources */,
+				8156B0AB20DCC593004303C0 /* reveal_sound.mp3 in Resources */,
+				8156B0AF20DCC593004303C0 /* bkg_music_2.mp3 in Resources */,
+				8156B0AC20DCC593004303C0 /* winning_music.mp3 in Resources */,
 				8192B4B020DCB49400F918D2 /* FieldGridCell.xib in Resources */,
+				8156B0B120DCC593004303C0 /* positive_sound.mp3 in Resources */,
+				8156B0B020DCC593004303C0 /* save_config_sound.mp3 in Resources */,
+				8156B0AD20DCC593004303C0 /* explosion_sound.mp3 in Resources */,
 				8100A2DC20D42AD200DEFF44 /* Assets.xcassets in Resources */,
+				8156B0AE20DCC593004303C0 /* select_sound.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
