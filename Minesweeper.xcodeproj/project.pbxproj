@@ -35,6 +35,7 @@
 		8156B0B820DCC696004303C0 /* AudioOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8156B0B720DCC696004303C0 /* AudioOptions.swift */; };
 		8156B0BA20DCC74A004303C0 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8156B0B920DCC74A004303C0 /* Cell.swift */; };
 		8156B0BD20DCC830004303C0 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8156B0BC20DCC830004303C0 /* Database.swift */; };
+		8156B0BF20DCC874004303C0 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8156B0BE20DCC874004303C0 /* Game.swift */; };
 		8192B4A120DCB18B00F918D2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8192B4A020DCB18B00F918D2 /* Constants.swift */; };
 		8192B4A420DCB22D00F918D2 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8192B4A320DCB22D00F918D2 /* UIView.swift */; };
 		8192B4A620DCB27F00F918D2 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8192B4A520DCB27F00F918D2 /* UIColor.swift */; };
@@ -75,6 +76,7 @@
 		8156B0B720DCC696004303C0 /* AudioOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioOptions.swift; sourceTree = "<group>"; };
 		8156B0B920DCC74A004303C0 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		8156B0BC20DCC830004303C0 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		8156B0BE20DCC874004303C0 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		8192B4A020DCB18B00F918D2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8192B4A320DCB22D00F918D2 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		8192B4A520DCB27F00F918D2 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 				8156B0B720DCC696004303C0 /* AudioOptions.swift */,
 				8156B0B920DCC74A004303C0 /* Cell.swift */,
 				8156B0BC20DCC830004303C0 /* Database.swift */,
+				8156B0BE20DCC874004303C0 /* Game.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8100A2D520D42AD100DEFF44 /* GameScene.swift in Sources */,
+				8156B0BF20DCC874004303C0 /* Game.swift in Sources */,
 				8156B09720DCBD8B004303C0 /* GameProcessingService.swift in Sources */,
 				8156B09B20DCBE71004303C0 /* PersistableService.swift in Sources */,
 				8100A2D720D42AD100DEFF44 /* GameViewController.swift in Sources */,
