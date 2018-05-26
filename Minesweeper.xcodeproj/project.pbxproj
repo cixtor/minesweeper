@@ -40,6 +40,7 @@
 		8156B0C320DCC9A8004303C0 /* GameTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8156B0C220DCC9A8004303C0 /* GameTimer.swift */; };
 		8156B0C520DCCBD5004303C0 /* MineField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8156B0C420DCCBD5004303C0 /* MineField.swift */; };
 		8156B0C820DCCDD8004303C0 /* FieldGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8156B0C720DCCDD8004303C0 /* FieldGrid.swift */; };
+		8156B0CB20DCCFA2004303C0 /* FieldGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8156B0CA20DCCFA2004303C0 /* FieldGridCell.swift */; };
 		8192B4A120DCB18B00F918D2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8192B4A020DCB18B00F918D2 /* Constants.swift */; };
 		8192B4A420DCB22D00F918D2 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8192B4A320DCB22D00F918D2 /* UIView.swift */; };
 		8192B4A620DCB27F00F918D2 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8192B4A520DCB27F00F918D2 /* UIColor.swift */; };
@@ -85,6 +86,7 @@
 		8156B0C220DCC9A8004303C0 /* GameTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTimer.swift; sourceTree = "<group>"; };
 		8156B0C420DCCBD5004303C0 /* MineField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineField.swift; sourceTree = "<group>"; };
 		8156B0C720DCCDD8004303C0 /* FieldGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldGrid.swift; sourceTree = "<group>"; };
+		8156B0CA20DCCFA2004303C0 /* FieldGridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldGridCell.swift; sourceTree = "<group>"; };
 		8192B4A020DCB18B00F918D2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8192B4A320DCB22D00F918D2 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		8192B4A520DCB27F00F918D2 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				8156B0C720DCCDD8004303C0 /* FieldGrid.swift */,
+				8156B0CA20DCCFA2004303C0 /* FieldGridCell.swift */,
 			);
 			path = Decorators;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8156B0CB20DCCFA2004303C0 /* FieldGridCell.swift in Sources */,
 				8100A2D520D42AD100DEFF44 /* GameScene.swift in Sources */,
 				8156B0BF20DCC874004303C0 /* Game.swift in Sources */,
 				8156B09720DCBD8B004303C0 /* GameProcessingService.swift in Sources */,
