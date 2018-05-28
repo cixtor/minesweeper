@@ -12,7 +12,6 @@
 		8100A2D720D42AD100DEFF44 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8100A2D620D42AD100DEFF44 /* GameViewController.swift */; };
 		8100A2DA20D42AD100DEFF44 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8100A2D820D42AD100DEFF44 /* Main.storyboard */; };
 		8100A2DC20D42AD200DEFF44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8100A2DB20D42AD200DEFF44 /* Assets.xcassets */; };
-		8100A2F120D43EA000DEFF44 /* GameOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8100A2EF20D43E9F00DEFF44 /* GameOver.swift */; };
 		8100A2F220D43EA000DEFF44 /* GameLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8100A2F020D43EA000DEFF44 /* GameLogic.swift */; };
 		8117CB4220DCB7E400677D8F /* Database.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8117CB4020DCB7E400677D8F /* Database.xcdatamodeld */; };
 		8156B09420DCBC5E004303C0 /* GameGeneratorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8156B09320DCBC5E004303C0 /* GameGeneratorService.swift */; };
@@ -60,7 +59,6 @@
 		8100A2D920D42AD100DEFF44 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8100A2DB20D42AD200DEFF44 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8100A2E020D42AD200DEFF44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8100A2EF20D43E9F00DEFF44 /* GameOver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOver.swift; sourceTree = "<group>"; };
 		8100A2F020D43EA000DEFF44 /* GameLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameLogic.swift; sourceTree = "<group>"; };
 		8117CB4120DCB7E400677D8F /* Database.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Database.xcdatamodel; sourceTree = "<group>"; };
 		8156B09320DCBC5E004303C0 /* GameGeneratorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameGeneratorService.swift; sourceTree = "<group>"; };
@@ -161,7 +159,6 @@
 			isa = PBXGroup;
 			children = (
 				8100A2F020D43EA000DEFF44 /* GameLogic.swift */,
-				8100A2EF20D43E9F00DEFF44 /* GameOver.swift */,
 				8100A2D420D42AD100DEFF44 /* GameScene.swift */,
 				8100A2D620D42AD100DEFF44 /* GameViewController.swift */,
 			);
@@ -336,7 +333,6 @@
 				8156B0C120DCC8E3004303C0 /* GameOptions.swift in Sources */,
 				8156B0CF20DCD151004303C0 /* FieldGridScroll.swift in Sources */,
 				8156B0B820DCC696004303C0 /* AudioOptions.swift in Sources */,
-				8100A2F120D43EA000DEFF44 /* GameOver.swift in Sources */,
 				8192B4A620DCB27F00F918D2 /* UIColor.swift in Sources */,
 				8156B0C520DCCBD5004303C0 /* MineField.swift in Sources */,
 				8192B4A120DCB18B00F918D2 /* Constants.swift in Sources */,
