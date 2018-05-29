@@ -40,6 +40,7 @@
 		8156B0CB20DCCFA2004303C0 /* FieldGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8156B0CA20DCCFA2004303C0 /* FieldGridCell.swift */; };
 		8156B0CD20DCD0CB004303C0 /* FieldGridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8156B0CC20DCD0CB004303C0 /* FieldGridLayout.swift */; };
 		8156B0CF20DCD151004303C0 /* FieldGridScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8156B0CE20DCD151004303C0 /* FieldGridScroll.swift */; };
+		8156B0D320DCD635004303C0 /* CreditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8156B0D220DCD635004303C0 /* CreditsViewController.swift */; };
 		8192B4A120DCB18B00F918D2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8192B4A020DCB18B00F918D2 /* Constants.swift */; };
 		8192B4A420DCB22D00F918D2 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8192B4A320DCB22D00F918D2 /* UIView.swift */; };
 		8192B4A620DCB27F00F918D2 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8192B4A520DCB27F00F918D2 /* UIColor.swift */; };
@@ -85,6 +86,7 @@
 		8156B0CA20DCCFA2004303C0 /* FieldGridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldGridCell.swift; sourceTree = "<group>"; };
 		8156B0CC20DCD0CB004303C0 /* FieldGridLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldGridLayout.swift; sourceTree = "<group>"; };
 		8156B0CE20DCD151004303C0 /* FieldGridScroll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldGridScroll.swift; sourceTree = "<group>"; };
+		8156B0D220DCD635004303C0 /* CreditsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsViewController.swift; sourceTree = "<group>"; };
 		8192B4A020DCB18B00F918D2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8192B4A320DCB22D00F918D2 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		8192B4A520DCB27F00F918D2 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				8100A2D620D42AD100DEFF44 /* GameViewController.swift */,
+				8156B0D220DCD635004303C0 /* CreditsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 				8100A2D720D42AD100DEFF44 /* GameViewController.swift in Sources */,
 				8100A2CF20D42AD000DEFF44 /* AppDelegate.swift in Sources */,
 				8156B0BA20DCC74A004303C0 /* Cell.swift in Sources */,
+				8156B0D320DCD635004303C0 /* CreditsViewController.swift in Sources */,
 				8156B0CD20DCD0CB004303C0 /* FieldGridLayout.swift in Sources */,
 				8156B09920DCBDDC004303C0 /* GameIconsService.swift in Sources */,
 				8117CB4220DCB7E400677D8F /* Database.xcdatamodeld in Sources */,
