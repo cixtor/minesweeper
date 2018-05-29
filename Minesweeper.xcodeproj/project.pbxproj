@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		8100A2CF20D42AD000DEFF44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8100A2CE20D42AD000DEFF44 /* AppDelegate.swift */; };
-		8100A2D520D42AD100DEFF44 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8100A2D420D42AD100DEFF44 /* GameScene.swift */; };
 		8100A2D720D42AD100DEFF44 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8100A2D620D42AD100DEFF44 /* GameViewController.swift */; };
 		8100A2DA20D42AD100DEFF44 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8100A2D820D42AD100DEFF44 /* Main.storyboard */; };
 		8100A2DC20D42AD200DEFF44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8100A2DB20D42AD200DEFF44 /* Assets.xcassets */; };
@@ -53,7 +52,6 @@
 /* Begin PBXFileReference section */
 		8100A2CB20D42AD000DEFF44 /* Minesweeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Minesweeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8100A2CE20D42AD000DEFF44 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8100A2D420D42AD100DEFF44 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		8100A2D620D42AD100DEFF44 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		8100A2D920D42AD100DEFF44 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8100A2DB20D42AD200DEFF44 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -156,7 +154,6 @@
 		8100A2E820D42B7D00DEFF44 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				8100A2D420D42AD100DEFF44 /* GameScene.swift */,
 				8100A2D620D42AD100DEFF44 /* GameViewController.swift */,
 			);
 			path = Controllers;
@@ -315,7 +312,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8156B0CB20DCCFA2004303C0 /* FieldGridCell.swift in Sources */,
-				8100A2D520D42AD100DEFF44 /* GameScene.swift in Sources */,
 				8156B0BF20DCC874004303C0 /* Game.swift in Sources */,
 				8156B09720DCBD8B004303C0 /* GameProcessingService.swift in Sources */,
 				8156B09B20DCBE71004303C0 /* PersistableService.swift in Sources */,
