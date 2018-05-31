@@ -7,66 +7,343 @@
 //
 
 import UIKit
-import SpriteKit
+import AVFoundation
 
-extension SKNode {
-    class func unarchiveFromFile(file : NSString) -> SKNode? {
-        if let path = Bundle.main.path(forResource: file as String, ofType: "sks") {
-            do {
-                let sceneData = try NSData.init(contentsOfFile: path, options: NSData.ReadingOptions.mappedIfSafe)
-                let archiver = NSKeyedUnarchiver(forReadingWith: sceneData as Data)
-                archiver.setClass(self.classForKeyedUnarchiver(), forClassName: "SKScene")
-                let scene = archiver.decodeObject(forKey: NSKeyedArchiveRootObjectKey) as! GameScene
-                archiver.finishDecoding()
-                return scene
-            } catch {
-                print("Scene Data error")
-            }
-        }
-
-        return nil
-    }
+enum UserAction {
+    case tap
+    case flag
 }
 
 class GameViewController: UIViewController {
-
+    @IBOutlet private weak var splashImage: UIImageView!
+    
+    // Controls
+    @IBOutlet private weak var controlsContainer: UIView!
+    @IBOutlet private weak var statsContainer: UIView!
+    
+    @IBOutlet fileprivate weak var timerLabel: UILabel!
+    @IBOutlet private weak var mineCountLabel: UILabel!
+    
+    @IBOutlet private weak var newGameButton: UIButton!
+    @IBOutlet private weak var actionModeButton: UIButton!
+    
+    // Grid
+    @IBOutlet fileprivate weak var mineFieldView: FieldGridScroll!
+    
+    fileprivate var game: Game?
+    fileprivate var isFieldInit: Bool = true
+    
+    private var currentOrientation: UIDeviceOrientation = .portrait
+    fileprivate var currentUserAction: UserAction = .tap
+    fileprivate let actionableState: Set<GameState> = Set([.loaded, .new, .inProgress])
+    
+    fileprivate var gameGeneratorService: GameGeneratorService = GameGeneratorService()
+    fileprivate var gameProcessingService: GameProcessingService = GameProcessingService()
+    private var gameTimer: GameTimer?
+    
+    fileprivate var audioService: AudioService = AudioService.shared
+    
+    lazy private var initGame: Void = {
+        self.gameProcessingService.registerListener(self)
+        self.showSplashImage()
+        
+        self.startNewGame()
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        if let scene = GameScene.unarchiveFromFile(file: "GameScene") as? GameScene {
-            // Configure the view.
-            let skView = self.view as! SKView
-            skView.showsFPS = true
-            skView.showsNodeCount = true
+        
+        if let bkgPattern = GameIconsService.shared.brickTileImage {
+            self.view.backgroundColor = UIColor.init(patternImage: bkgPattern)
+        }
+        
+        self.setupOrientationHandler()
+        
+        self.gameTimer = GameTimer(self)
+        
+        if !UIAccessibilityIsReduceTransparencyEnabled() {
+            self.statsContainer.backgroundColor = .clear
             
-            /* Sprite Kit applies additional optimizations to improve rendering performance */
-            skView.ignoresSiblingOrder = true
+            let blurEffect = UIBlurEffect(style: .dark)
+            let blurEffectView = UIVisualEffectView(effect: blurEffect)
+            blurEffectView.frame = self.statsContainer.bounds
+            blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
             
-            /* Set the scale mode to scale to fit the window */
-            scene.scaleMode = .aspectFill
-            
-            skView.presentScene(scene)
+            self.statsContainer.insertSubview(blurEffectView, at: 0)
         }
     }
-
-    func shouldAutorotate() -> Bool {
-        return true
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        let _ = initGame
     }
-
-    func supportedInterfaceOrientations() -> Int {
-        if UIDevice.current.userInterfaceIdiom == .phone {
-            return Int(UIInterfaceOrientationMask.allButUpsideDown.rawValue)
-        } else {
-            return Int(UIInterfaceOrientationMask.all.rawValue)
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    private func setupOrientationHandler() {
+        self.currentOrientation = UIDevice.current.orientation
+        
+        NotificationCenter.default.addObserver(forName: .UIDeviceOrientationDidChange, object: nil, queue: .main) { [weak self] (notification) in
+            guard let `self` = self else { return }
+            
+            if self.currentOrientation != UIDevice.current.orientation {
+                switch UIDevice.current.orientation {
+                case .landscapeLeft, .landscapeRight,
+                     .portrait, .portraitUpsideDown:
+                    self.mineFieldView.calculateGridLayoutParams()
+                    self.currentOrientation = UIDevice.current.orientation
+                default:
+                    break
+                }
+            }
         }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Release any cached data, images, etc that aren't in use.
+    
+    private func showSplashImage() {
+        self.splashImage.alpha = 0
+        self.splashImage.isHidden = false
+        self.splashImage.startRotating()
+        
+        UIView.animate(withDuration: 0.3) { [weak self] in
+            self?.splashImage.alpha = 1
+        }
     }
-
-    func prefersStatusBarHidden() -> Bool {
-        return true
+    
+    private func hideSplashImage() {
+        self.splashImage.alpha = 1
+        
+        UIView.animate(withDuration: 0.3, animations: { [weak self] in
+            guard let `self` = self else { return }
+            self.splashImage.alpha = 0
+            self.splashImage.transform = CGAffineTransform(scaleX: 0.15, y: 0.15)
+        }) { [weak self] (_) in
+            guard let `self` = self else { return }
+            
+            self.splashImage.isHidden = true
+            self.splashImage.transform = CGAffineTransform.identity
+            self.splashImage.stopRotating()
+        }
+    }
+    
+    private func setupFieldGridView() {
+        DispatchQueue.main.async {
+            var rowCount = 0
+            var colCount = 0
+            
+            if let game = self.game {
+                rowCount = game.mineField.rows
+                colCount = game.mineField.columns
+            } else {
+                let gameOptions = PersistableService.getGameOptions()
+                rowCount = gameOptions.rowCount
+                colCount = gameOptions.columnCount
+            }
+            
+            self.mineFieldView.setupFieldGrid(rows: rowCount, columns: colCount, dataSource: self, cellActionHandler: self) { (_, _) in
+                self.audioService.playBeepBeepSound()
+                self.hideSplashImage()
+            }
+        }
+    }
+    
+    private func startNewGame() {
+        self.audioService.startBackgroundMusic()
+        
+        self.isFieldInit = true
+        self.game = nil
+        
+        self.resetControlStates()
+        self.resetGameTimer()
+        self.setupFieldGridView()
+        
+        gameGeneratorService.generateNewGame { [weak self] (newGame) in
+            guard let `self` = self else { return }
+            
+            newGame.state = .loaded
+            self.game = newGame
+            
+            DispatchQueue.main.async {
+                self.mineCountLabel.text = String(describing: newGame.mineField.mines)
+            }
+            
+            self.finishLoading()
+        }
+    }
+    
+    private func resetGameTimer() {
+        self.timerLabel.text = "00:00"
+        self.gameTimer?.resetTimer()
+    }
+    
+    private func resetControlStates() {
+        self.updateActionModeButton(to: .tap)
+        self.timerLabel.textColor = Constants.primaryColor
+        self.mineCountLabel.textColor = Constants.primaryColor
+        
+        UIView.animate(withDuration: 0.3) {
+            self.timerLabel.transform = CGAffineTransform.identity
+        }
+        
+        if let bombImage = GameIconsService.shared.bombImage {
+            self.newGameButton.setImage(bombImage, for: UIControlState.normal)
+        }
+        
+        self.newGameButton.transform = CGAffineTransform.identity
+    }
+    
+    fileprivate func gameStarted() {
+        guard let game = self.game, game.state != .inProgress else { return }
+        
+        self.game?.state = .inProgress
+        
+        if let gameTimer = self.gameTimer {
+            gameTimer.restartTimer()
+        }
+    }
+    
+    fileprivate func gameOver() {
+        self.gameTimer?.pauseTimer()
+        self.audioService.stopBackgroundMusic()
+        self.audioService.playExplodeSound()
+        
+        DispatchQueue.main.async {
+            self.game?.state = .lost
+            
+            if let boomImage = GameIconsService.shared.boomImage {
+                self.newGameButton.setImage(boomImage, for: UIControlState.normal)
+                self.newGameButton.transform = CGAffineTransform(scaleX: 2, y: 2)
+            }
+            
+            self.timerLabel.textColor = Constants.heavyAccentColor
+            self.mineCountLabel.textColor = Constants.heavyAccentColor
+            
+            UIView.animate(withDuration: 0.2, animations: {
+                self.timerLabel.transform = CGAffineTransform(scaleX: 1.5, y: 1.5).rotated(by: .pi * -0.15)
+            })
+            
+            self.mineFieldView.showEntireField()
+            
+            self.gameGeneratorService.preloadGame()
+        }
+    }
+    
+    fileprivate func gameFinished() {
+        self.gameTimer?.pauseTimer()
+        self.audioService.stopBackgroundMusic()
+        self.audioService.playWinningMusic()
+        
+        DispatchQueue.main.async {
+            self.game?.state = .win
+            
+            self.timerLabel.textColor = Constants.accentColor
+            self.mineCountLabel.textColor = Constants.accentColor
+            
+            UIView.animate(withDuration: 0.2, animations: {
+                self.timerLabel.transform = CGAffineTransform(scaleX: 1.5, y: 1.5).rotated(by: .pi * -0.15)
+            })
+            
+            self.mineFieldView.showEntireField()
+            
+            self.gameGeneratorService.preloadGame()
+        }
+    }
+    
+    private func pauseGame() {
+        self.audioService.stopBackgroundMusic()
+        
+        guard let game = self.game, game.state == .inProgress else { return }
+        
+        self.gameTimer?.pauseTimer()
+        self.game?.state = .paused
+    }
+    
+    private func unpauseGame() {
+        guard let game = self.game else { return }
+        
+        switch game.state {
+        case .lost, .win:
+            return
+        case .paused:
+            game.state = .inProgress
+            
+            self.gameTimer?.resumeTimer()
+        default:
+            break
+        }
+        
+        self.audioService.startBackgroundMusic()
+    }
+    
+    private func finishLoading() {
+        self.isFieldInit = false
+    }
+    
+    private func updateActionModeButton(to action: UserAction) {
+        DispatchQueue.main.async {
+            self.currentUserAction = action
+            
+            switch self.currentUserAction {
+            case .flag:
+                if let flagImage = GameIconsService.shared.flagImage {
+                    self.actionModeButton.setImage(flagImage, for: UIControlState.normal)
+                }
+            case .tap:
+                if let shovelImage = GameIconsService.shared.shovelImage {
+                    self.actionModeButton.setImage(shovelImage, for: UIControlState.normal)
+                }
+            }
+        }
+    }
+    
+    fileprivate func updateRemainingMinesCountLabel() {
+        if let minesCount = self.game?.minesRemaining {
+            DispatchQueue.main.async {
+                self.mineCountLabel.text = String(describing: minesCount)
+                self.mineCountLabel.textColor = Constants.accentColor
+                self.mineCountLabel.transform = CGAffineTransform(scaleX: 1.7, y: 1.7)
+                
+                UIView.animate(withDuration: 0.2, delay: 0.1, options: .curveEaseOut, animations: {
+                    self.mineCountLabel.transform = CGAffineTransform.identity
+                }, completion: { (_) in
+                    self.mineCountLabel.textColor = Constants.primaryColor
+                })
+            }
+        }
+    }
+    
+    @IBAction func onActionModePressed(_ sender: UIButton) {
+        self.audioService.playPositiveSound()
+        self.updateActionModeButton(to: (self.currentUserAction == .tap) ? .flag : .tap)
+    }
+    
+    @IBAction func onNewGamePressed(_ sender: UIButton) {
+        self.audioService.playSaveConfigSound()
+        
+        self.startNewGame()
+    }
+    
+    @IBAction func onOptionsPressed(_ sender: UIButton) {
+        self.audioService.playPositiveSound()
+        
+        self.pauseGame()
+        
+        let optionsController = OptionsViewController(nibName: "OptionsViewController", bundle: nil)
+        optionsController.exitHandler = { [weak self] (newGame) in
+            guard let `self` = self else { return }
+            
+            if newGame {
+                self.startNewGame()
+            } else {
+                self.unpauseGame()
+            }
+        }
+        
+        optionsController.modalPresentationStyle = .overFullScreen
+        
+        self.present(optionsController, animated: true)
     }
 }
