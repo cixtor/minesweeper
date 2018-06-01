@@ -347,3 +347,9 @@ class GameViewController: UIViewController {
         self.present(optionsController, animated: true)
     }
 }
+
+extension GameViewController: GameTimerDelegate {
+    func onTimerUpdate(seconds: Int, timeString: String) {
+        self.timerLabel.text = timeString
+    }
+}
