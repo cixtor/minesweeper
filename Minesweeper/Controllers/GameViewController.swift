@@ -353,3 +353,26 @@ extension GameViewController: GameTimerDelegate {
         self.timerLabel.text = timeString
     }
 }
+
+extension GameViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.game?.mineField.cellIndexToCoordMap.count ?? self.gameGeneratorService.gameOptions.rowCount * self.gameGeneratorService.gameOptions.columnCount
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if let cellView = collectionView.dequeueReusableCell(withReuseIdentifier: FieldGrid.Constant.gridCellIdentifier, for: indexPath) as? FieldGridCell {
+            
+            if self.isFieldInit {
+                cellView.reinitCell(at: indexPath.row, fieldRows: self.gameGeneratorService.gameOptions.rowCount)
+            } else if let game = self.game, let cell = game.mineField.getCell(at: indexPath.row) {
+                cellView.setupCellView(with: cell)
+            }
+            
+            return cellView
+        }
+        
+        let cellView = FieldGridCell()
+        cellView.reinitCell(at: indexPath.row, fieldRows: self.gameGeneratorService.gameOptions.rowCount)
+        return cellView
+    }
+}
