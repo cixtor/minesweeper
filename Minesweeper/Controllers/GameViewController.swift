@@ -419,3 +419,72 @@ extension GameViewController: FieldGridCellActionListener {
     func onCellHardPress(_ cellIndex: Int) {
     }
 }
+
+extension GameViewController: GameStatusListener {
+    func cellsRevealed(_ revealedCells: Set<Int>) {
+        let revealedIndexPaths = revealedCells.map { return IndexPath(row: $0, section: 0) }
+        self.mineFieldView.updateCells(at: revealedIndexPaths)
+        
+        self.audioService.playRevealSound()
+    }
+    
+    func cellsHighlighted(_ highlightedCells: Set<Int>) {
+        let highlightIndexPaths = highlightedCells.map { return IndexPath(row: $0, section: 0) }
+        
+        self.mineFieldView.updateCells(at: highlightIndexPaths)
+        
+        self.audioService.playProbeSound()
+        
+        // Now reset them to untouched
+        DispatchQueue.main.async {
+            for cellId in highlightedCells {
+                if let cell = self.game?.mineField.getCell(at: cellId), cell.state == .highlight {
+                    cell.state = .untouched
+                    self.game?.mineField.updateCell(cell)
+                }
+            }
+            
+            self.mineFieldView.updateCells(at: highlightIndexPaths)
+        }
+    }
+    
+    func cellsUnhighlighted(_ unhighlightedCells: Set<Int>) {
+        let unhighlightIndexPaths = unhighlightedCells.map { return IndexPath(row: $0, section: 0) }
+        
+        self.mineFieldView.updateCells(at: unhighlightIndexPaths)
+    }
+    
+    func cellFlagged(_ flaggedCell: Int) {
+        self.mineFieldView.updateCells(at: [IndexPath(row: flaggedCell, section: 0)])
+        
+        self.updateRemainingMinesCountLabel()
+        
+        self.audioService.playFlagSound()
+    }
+    
+    func cellUnflagged(_ unflaggedCell: Int) {
+        self.mineFieldView.updateCells(at: [IndexPath(row: unflaggedCell, section: 0)])
+        
+        self.updateRemainingMinesCountLabel()
+        
+        self.audioService.playFlagSound()
+    }
+    
+    func cellExploded(_ explodedCell: Int, otherBombCells: Set<Int>, wrongFlaggedCells: Set<Int>) {
+        var cellsToUpdate = otherBombCells.map { return IndexPath(row: $0, section: 0) }
+        cellsToUpdate.append(contentsOf: wrongFlaggedCells.map { return IndexPath(row: $0, section: 0) })
+        
+        self.mineFieldView.updateCells(at: cellsToUpdate)
+        
+        // Ensure this gets rendered last
+        DispatchQueue.main.async {
+            self.mineFieldView.updateCells(at: [IndexPath(row: explodedCell, section: 0)])
+        }
+        
+        self.gameOver()
+    }
+    
+    func gameCompleted() {
+        self.gameFinished()
+    }
+}
