@@ -376,3 +376,46 @@ extension GameViewController: UICollectionViewDataSource {
         return cellView
     }
 }
+
+extension GameViewController: FieldGridCellActionListener {
+    func onCellTap(_ cellIndex: Int) {
+        guard let game = self.game else { return }
+        
+        if actionableState.contains(game.state) {
+            self.audioService.playTapSound()
+            
+            self.gameStarted()
+            
+            self.gameProcessingService.resolveUserAction(at: cellIndex, in: game, with: self.currentUserAction)
+        }
+    }
+    
+    func onCellHighlight(_ cellIndex: Int) {
+        guard let game = self.game else { return }
+        
+        if actionableState.contains(game.state) {
+            self.gameProcessingService.resolveUserAction(at: cellIndex, in: game, with: self.currentUserAction)
+        }
+    }
+    
+    func onCellUnhighlight(_ cellIndex: Int) {
+        guard let game = self.game else { return }
+        
+        if actionableState.contains(game.state) {
+            self.gameProcessingService.resolveUserAction(at: cellIndex, in: game, with: self.currentUserAction)
+        }
+    }
+    
+    func onCellLongPress(_ cellIndex: Int) {
+        guard let game = self.game else { return }
+        
+        if actionableState.contains(game.state) {
+            self.gameStarted()
+            
+            self.gameProcessingService.resolveUserAction(at: cellIndex, in: game, with: .flag)
+        }
+    }
+    
+    func onCellHardPress(_ cellIndex: Int) {
+    }
+}
