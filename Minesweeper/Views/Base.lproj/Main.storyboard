@@ -46,7 +46,7 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8c0-Ri-wWo" userLabel="New Game">
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8c0-Ri-wWo" userLabel="New Game">
                                                 <rect key="frame" x="164.5" y="1.5" width="46" height="46"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="46" id="ImC-nG-vBV"/>
@@ -69,9 +69,7 @@
                                                     <constraint firstAttribute="height" constant="40" id="Vfs-XW-aCi"/>
                                                     <constraint firstAttribute="width" constant="40" id="XMk-vE-jwR"/>
                                                 </constraints>
-                                                <state key="normal" image="shovel-icon">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
+                                                <state key="normal" title="🔍"/>
                                                 <connections>
                                                     <action selector="onActionModePressed:" destination="cKM-BE-w3S" eventType="touchUpInside" id="CgO-bB-9EM"/>
                                                 </connections>
@@ -147,7 +145,4 @@
             <point key="canvasLocation" x="-804" y="38.23088455772114"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="shovel-icon" width="60" height="60"/>
-    </resources>
 </document>

@@ -116,7 +116,12 @@ class GameViewController: UIViewController {
                 colCount = gameOptions.columnCount
             }
             
-            self.mineFieldView.setupFieldGrid(rows: rowCount, columns: colCount, dataSource: self, cellActionHandler: self) { (_, _) in
+            self.mineFieldView.setupFieldGrid(
+                rows: rowCount,
+                columns: colCount,
+                dataSource: self,
+                cellActionHandler: self
+            ) { (_, _) in
                 self.audioService.playBeepBeepSound()
             }
         }
@@ -260,13 +265,9 @@ class GameViewController: UIViewController {
             
             switch self.currentUserAction {
             case .flag:
-                if let flagImage = GameIconsService.shared.flagImage {
-                    self.actionModeButton.setImage(flagImage, for: UIControlState.normal)
-                }
+                self.actionModeButton.setTitle("🚩", for: UIControlState.normal)
             case .tap:
-                if let shovelImage = GameIconsService.shared.shovelImage {
-                    self.actionModeButton.setImage(shovelImage, for: UIControlState.normal)
-                }
+                self.actionModeButton.setTitle("🔍", for: UIControlState.normal)
             }
         }
     }
@@ -421,7 +422,9 @@ extension GameViewController: GameStatusListener {
     }
     
     func cellsUnhighlighted(_ unhighlightedCells: Set<Int>) {
-        let unhighlightIndexPaths = unhighlightedCells.map { return IndexPath(row: $0, section: 0) }
+        let unhighlightIndexPaths = unhighlightedCells.map {
+            return IndexPath(row: $0, section: 0)
+        }
         
         self.mineFieldView.updateCells(at: unhighlightIndexPaths)
     }
@@ -443,8 +446,13 @@ extension GameViewController: GameStatusListener {
     }
     
     func cellExploded(_ explodedCell: Int, otherBombCells: Set<Int>, wrongFlaggedCells: Set<Int>) {
-        var cellsToUpdate = otherBombCells.map { return IndexPath(row: $0, section: 0) }
-        cellsToUpdate.append(contentsOf: wrongFlaggedCells.map { return IndexPath(row: $0, section: 0) })
+        var cellsToUpdate = otherBombCells.map {
+            return IndexPath(row: $0, section: 0)
+        }
+
+        cellsToUpdate.append(contentsOf: wrongFlaggedCells.map {
+            return IndexPath(row: $0, section: 0)
+        })
         
         self.mineFieldView.updateCells(at: cellsToUpdate)
         

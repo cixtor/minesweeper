@@ -13,24 +13,19 @@ class Constants {
     static let accentColor: UIColor = UIColor(rgb: 0x18EBFF)
     static let heavyAccentColor: UIColor = UIColor(rgb: 0x990000)
     
-    static let digital7Font: String = "Digital-7"
-    static let digital7MonoFont: String = "Digital-7 Mono"
-    
     static let brickTileIconName = "brick-tile-icon"
     static let darkGrassIconName = "grass-dark-icon"
     static let lightGrassIconName = "grass-light-icon"
     static let flagIconName = "flag-icon"
-    static let shovelIconName = "shovel-icon"
     static let boomIconName = "boom-icon"
     static let bombIconName = "cherry-bomb-icon"
-    static let gearIconName = "gear-icon"
     static let xIconName = "x-icon"
     
     static let defaultMines: Int = 10
     static let minimumMines: Int = 10
     static let maximumMines: Int = 200
     
-    static let defaultRows: Int = 9
+    static let defaultRows: Int = 14
     static let defaultColumns: Int = 9
     static let minimumFieldDimension: Int = 9
     static let maximumFieldDimension: Int = 30

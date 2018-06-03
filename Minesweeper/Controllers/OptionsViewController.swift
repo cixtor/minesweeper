@@ -243,15 +243,6 @@ class OptionsViewController: UIViewController {
         self.dismiss(animated: true)
     }
     
-    @IBAction func onCreditButtonPressed(_ sender: UIButton) {
-        self.audioService.playSelectSound()
-        
-        let creditsController = CreditsViewController(nibName: "CreditsViewController", bundle: nil)
-        creditsController.modalPresentationStyle = .overFullScreen
-        
-        self.present(creditsController, animated: true)
-    }
-    
     private func validateConfig(rowCount: Int, columnCount: Int, minesCount: Int) -> String? {
         let maxMines = (rowCount-1) * (columnCount-1)
         
@@ -268,7 +259,6 @@ class OptionsViewController: UIViewController {
         toastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.6)
         toastLabel.textColor = Constants.accentColor
         toastLabel.textAlignment = .center;
-        toastLabel.font = UIFont(name: Constants.digital7MonoFont, size: 12.0)
         toastLabel.text = message
         toastLabel.alpha = 1.0
         toastLabel.layer.cornerRadius = 10;
@@ -304,7 +294,6 @@ extension OptionsViewController: UIPickerViewDelegate {
         let pickerLabel = UILabel()
         pickerLabel.textColor = UIColor.white
         pickerLabel.text = valueStr
-        pickerLabel.font = UIFont(name: Constants.digital7MonoFont, size: 25)
         pickerLabel.textAlignment = NSTextAlignment.center
         return pickerLabel
     }
