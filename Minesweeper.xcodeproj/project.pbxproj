@@ -40,14 +40,12 @@
 		8156B0CB20DCCFA2004303C0 /* FieldGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8156B0CA20DCCFA2004303C0 /* FieldGridCell.swift */; };
 		8156B0CD20DCD0CB004303C0 /* FieldGridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8156B0CC20DCD0CB004303C0 /* FieldGridLayout.swift */; };
 		8156B0CF20DCD151004303C0 /* FieldGridScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8156B0CE20DCD151004303C0 /* FieldGridScroll.swift */; };
-		8156B0D320DCD635004303C0 /* CreditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8156B0D220DCD635004303C0 /* CreditsViewController.swift */; };
 		8156B0D720DCD692004303C0 /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8156B0D620DCD692004303C0 /* OptionsViewController.swift */; };
 		8192B4A120DCB18B00F918D2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8192B4A020DCB18B00F918D2 /* Constants.swift */; };
 		8192B4A420DCB22D00F918D2 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8192B4A320DCB22D00F918D2 /* UIView.swift */; };
 		8192B4A620DCB27F00F918D2 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8192B4A520DCB27F00F918D2 /* UIColor.swift */; };
 		8192B4A920DCB45F00F918D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8192B4A720DCB45E00F918D2 /* LaunchScreen.storyboard */; };
 		8192B4B020DCB49400F918D2 /* FieldGridCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8192B4AA20DCB49400F918D2 /* FieldGridCell.xib */; };
-		8192B4B120DCB49400F918D2 /* CreditsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8192B4AC20DCB49400F918D2 /* CreditsViewController.xib */; };
 		8192B4B220DCB49400F918D2 /* OptionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8192B4AE20DCB49400F918D2 /* OptionsViewController.xib */; };
 /* End PBXBuildFile section */
 
@@ -87,14 +85,12 @@
 		8156B0CA20DCCFA2004303C0 /* FieldGridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldGridCell.swift; sourceTree = "<group>"; };
 		8156B0CC20DCD0CB004303C0 /* FieldGridLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldGridLayout.swift; sourceTree = "<group>"; };
 		8156B0CE20DCD151004303C0 /* FieldGridScroll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldGridScroll.swift; sourceTree = "<group>"; };
-		8156B0D220DCD635004303C0 /* CreditsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsViewController.swift; sourceTree = "<group>"; };
 		8156B0D620DCD692004303C0 /* OptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
 		8192B4A020DCB18B00F918D2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8192B4A320DCB22D00F918D2 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		8192B4A520DCB27F00F918D2 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		8192B4A820DCB45E00F918D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8192B4AB20DCB49400F918D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/FieldGridCell.xib; sourceTree = "<group>"; };
-		8192B4AD20DCB49400F918D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/CreditsViewController.xib; sourceTree = "<group>"; };
 		8192B4AF20DCB49400F918D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/OptionsViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -146,7 +142,6 @@
 		8100A2E620D42B6D00DEFF44 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				8192B4AC20DCB49400F918D2 /* CreditsViewController.xib */,
 				8192B4AA20DCB49400F918D2 /* FieldGridCell.xib */,
 				8192B4A720DCB45E00F918D2 /* LaunchScreen.storyboard */,
 				8100A2D820D42AD100DEFF44 /* Main.storyboard */,
@@ -158,7 +153,6 @@
 		8100A2E820D42B7D00DEFF44 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				8156B0D220DCD635004303C0 /* CreditsViewController.swift */,
 				8100A2D620D42AD100DEFF44 /* GameViewController.swift */,
 				8156B0D620DCD692004303C0 /* OptionsViewController.swift */,
 			);
@@ -294,7 +288,6 @@
 				8156B0B420DCC593004303C0 /* bkg_music_1.mp3 in Resources */,
 				8100A2DA20D42AD100DEFF44 /* Main.storyboard in Resources */,
 				8156B0B220DCC593004303C0 /* tap_sound.mp3 in Resources */,
-				8192B4B120DCB49400F918D2 /* CreditsViewController.xib in Resources */,
 				8192B4B220DCB49400F918D2 /* OptionsViewController.xib in Resources */,
 				8156B0AA20DCC593004303C0 /* flag_sound.mp3 in Resources */,
 				8192B4A920DCB45F00F918D2 /* LaunchScreen.storyboard in Resources */,
@@ -324,7 +317,6 @@
 				8100A2D720D42AD100DEFF44 /* GameViewController.swift in Sources */,
 				8100A2CF20D42AD000DEFF44 /* AppDelegate.swift in Sources */,
 				8156B0BA20DCC74A004303C0 /* Cell.swift in Sources */,
-				8156B0D320DCD635004303C0 /* CreditsViewController.swift in Sources */,
 				8156B0CD20DCD0CB004303C0 /* FieldGridLayout.swift in Sources */,
 				8156B0D720DCD692004303C0 /* OptionsViewController.swift in Sources */,
 				8156B09920DCBDDC004303C0 /* GameIconsService.swift in Sources */,
@@ -369,14 +361,6 @@
 				8192B4AB20DCB49400F918D2 /* Base */,
 			);
 			name = FieldGridCell.xib;
-			sourceTree = "<group>";
-		};
-		8192B4AC20DCB49400F918D2 /* CreditsViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8192B4AD20DCB49400F918D2 /* Base */,
-			);
-			name = CreditsViewController.xib;
 			sourceTree = "<group>";
 		};
 		8192B4AE20DCB49400F918D2 /* OptionsViewController.xib */ = {

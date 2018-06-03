@@ -45,7 +45,6 @@ class GameViewController: UIViewController {
     
     lazy private var initGame: Void = {
         self.gameProcessingService.registerListener(self)
-        self.showSplashImage()
         
         self.startNewGame()
     }()
@@ -103,32 +102,6 @@ class GameViewController: UIViewController {
         }
     }
     
-    private func showSplashImage() {
-        self.splashImage.alpha = 0
-        self.splashImage.isHidden = false
-        self.splashImage.startRotating()
-        
-        UIView.animate(withDuration: 0.3) { [weak self] in
-            self?.splashImage.alpha = 1
-        }
-    }
-    
-    private func hideSplashImage() {
-        self.splashImage.alpha = 1
-        
-        UIView.animate(withDuration: 0.3, animations: { [weak self] in
-            guard let `self` = self else { return }
-            self.splashImage.alpha = 0
-            self.splashImage.transform = CGAffineTransform(scaleX: 0.15, y: 0.15)
-        }) { [weak self] (_) in
-            guard let `self` = self else { return }
-            
-            self.splashImage.isHidden = true
-            self.splashImage.transform = CGAffineTransform.identity
-            self.splashImage.stopRotating()
-        }
-    }
-    
     private func setupFieldGridView() {
         DispatchQueue.main.async {
             var rowCount = 0
@@ -145,7 +118,6 @@ class GameViewController: UIViewController {
             
             self.mineFieldView.setupFieldGrid(rows: rowCount, columns: colCount, dataSource: self, cellActionHandler: self) { (_, _) in
                 self.audioService.playBeepBeepSound()
-                self.hideSplashImage()
             }
         }
     }

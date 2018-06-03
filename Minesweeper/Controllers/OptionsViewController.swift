@@ -48,8 +48,6 @@ class OptionsViewController: UIViewController {
         self.updateDifficultyLabels()
         self.updateSelectedPickerIndices()
         self.updateSwitchStates()
-        
-        self.setupVersionNumber()
     }()
     
     override func viewDidLoad() {
@@ -92,22 +90,6 @@ class OptionsViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         // Dispose of any resources that can be recreated.
         super.didReceiveMemoryWarning()
-    }
-    
-    private func setupVersionNumber() {
-        if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
-            var outputVersion = version
-            
-            if let buildNumber = Bundle.main.infoDictionary?["CFBundleVersion"] as? String {
-                outputVersion += ".\(buildNumber)"
-            }
-            
-            self.versionLabel.text = outputVersion
-            
-            return
-        }
-        
-        self.versionLabel.isHidden = true
     }
     
     private func updateDifficultyLabels() {
