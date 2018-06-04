@@ -31,7 +31,7 @@ class FieldGridCell: UICollectionViewCell {
     @IBOutlet private weak var cellFlagIcon: UIImageView!
     @IBOutlet private weak var cellCover: UIImageView!
     @IBOutlet private weak var adjacentBombsLabel: UILabel!
-    @IBOutlet private weak var bombIcon: UIImageView!
+    @IBOutlet private weak var bombIcon: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -108,14 +108,11 @@ class FieldGridCell: UICollectionViewCell {
             }
             
         case .wrongBomb:
-            if let xImage = GameIconsService.shared.xImage {
-                self.bombIcon.image = xImage
-                self.bombIcon.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
-                self.bombIcon.isHidden = false
-            } else {
-                self.cellCover.isHidden = true
-            }
-            
+            self.bombIcon.text = "❌"
+            self.bombIcon.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+            self.bombIcon.isHidden = false
+            //self.cellCover.isHidden = true
+
             self.cellFlagIcon.isHidden = false
         }
     }
@@ -183,10 +180,7 @@ class FieldGridCell: UICollectionViewCell {
         
         self.bombIcon.isHidden = true
         self.bombIcon.transform = CGAffineTransform.identity
-        
-        if let bombIcon = GameIconsService.shared.bombImage {
-            self.bombIcon.image = bombIcon
-        }
+        self.bombIcon.text = "💣"
         
         self.adjacentBombsLabel.isHidden = true
         self.adjacentBombsLabel.text = nil

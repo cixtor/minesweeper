@@ -165,10 +165,7 @@ class GameViewController: UIViewController {
             self.timerLabel.transform = CGAffineTransform.identity
         }
         
-        if let bombImage = GameIconsService.shared.bombImage {
-            self.newGameButton.setImage(bombImage, for: UIControlState.normal)
-        }
-        
+        self.newGameButton.setTitle("💣", for: UIControlState.normal)
         self.newGameButton.transform = CGAffineTransform.identity
     }
     

@@ -17,7 +17,6 @@ class GameIconsService {
     var lightGrassImage: UIImage?
     var flagImage: UIImage?
     var boomImage: UIImage?
-    var bombImage: UIImage?
     var xImage: UIImage?
     
     fileprivate init() {
@@ -26,7 +25,6 @@ class GameIconsService {
         self.lightGrassImage = UIImage(named: Constants.lightGrassIconName)
         self.flagImage = UIImage(named: Constants.flagIconName)
         self.boomImage = UIImage(named: Constants.boomIconName)
-        self.bombImage = UIImage(named: Constants.bombIconName)
         self.xImage = UIImage(named: Constants.xIconName)
     }
 }

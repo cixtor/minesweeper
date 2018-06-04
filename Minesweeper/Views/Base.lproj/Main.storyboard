@@ -52,6 +52,7 @@
                                                     <constraint firstAttribute="width" constant="46" id="ImC-nG-vBV"/>
                                                     <constraint firstAttribute="height" constant="46" id="aAR-Bm-eb6"/>
                                                 </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                                 <state key="normal" title="🙂"/>
                                                 <connections>
                                                     <action selector="onNewGamePressed:" destination="cKM-BE-w3S" eventType="touchUpInside" id="Kij-AV-So7"/>
@@ -69,6 +70,7 @@
                                                     <constraint firstAttribute="height" constant="40" id="Vfs-XW-aCi"/>
                                                     <constraint firstAttribute="width" constant="40" id="XMk-vE-jwR"/>
                                                 </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                                 <state key="normal" title="🔍"/>
                                                 <connections>
                                                     <action selector="onActionModePressed:" destination="cKM-BE-w3S" eventType="touchUpInside" id="CgO-bB-9EM"/>

@@ -16,10 +16,7 @@ class Constants {
     static let brickTileIconName = "brick-tile-icon"
     static let darkGrassIconName = "grass-dark-icon"
     static let lightGrassIconName = "grass-light-icon"
-    static let flagIconName = "flag-icon"
     static let boomIconName = "boom-icon"
-    static let bombIconName = "cherry-bomb-icon"
-    static let xIconName = "x-icon"
     
     static let defaultMines: Int = 10
     static let minimumMines: Int = 10
