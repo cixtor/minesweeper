@@ -89,12 +89,9 @@ class FieldGridCell: UICollectionViewCell {
             }
         case .exploded:
             self.background.isHidden = false
-            
-            if let boomImage = GameIconsService.shared.boomImage {
-                self.cellCover.image = boomImage
-                self.cellCover.layer.borderWidth = CGFloat(0)
-                self.cellCover.transform = CGAffineTransform(scaleX: 2, y: 2)
-            }
+            self.cellCover.isHidden = true
+            self.cellCover.layer.borderWidth = CGFloat(0)
+            self.cellCover.transform = CGAffineTransform(scaleX: 2, y: 2)
             
         case .highlight:
             self.background.isHidden = false
@@ -112,7 +109,6 @@ class FieldGridCell: UICollectionViewCell {
             self.bombIcon.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
             self.bombIcon.isHidden = false
             //self.cellCover.isHidden = true
-
             self.cellFlagIcon.isHidden = false
         }
     }

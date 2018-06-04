@@ -16,13 +16,12 @@ class Constants {
     static let brickTileIconName = "brick-tile-icon"
     static let darkGrassIconName = "grass-dark-icon"
     static let lightGrassIconName = "grass-light-icon"
-    static let boomIconName = "boom-icon"
     
     static let defaultMines: Int = 10
     static let minimumMines: Int = 10
     static let maximumMines: Int = 200
     
-    static let defaultRows: Int = 14
+    static let defaultRows: Int = 9
     static let defaultColumns: Int = 9
     static let minimumFieldDimension: Int = 9
     static let maximumFieldDimension: Int = 30

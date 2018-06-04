@@ -91,8 +91,7 @@ class GameViewController: UIViewController {
             
             if self.currentOrientation != UIDevice.current.orientation {
                 switch UIDevice.current.orientation {
-                case .landscapeLeft, .landscapeRight,
-                     .portrait, .portraitUpsideDown:
+                case .landscapeLeft, .landscapeRight, .portrait, .portraitUpsideDown:
                     self.mineFieldView.calculateGridLayoutParams()
                     self.currentOrientation = UIDevice.current.orientation
                 default:
@@ -187,10 +186,8 @@ class GameViewController: UIViewController {
         DispatchQueue.main.async {
             self.game?.state = .lost
             
-            if let boomImage = GameIconsService.shared.boomImage {
-                self.newGameButton.setImage(boomImage, for: UIControlState.normal)
-                self.newGameButton.transform = CGAffineTransform(scaleX: 2, y: 2)
-            }
+            self.newGameButton.setTitle("💥", for: UIControlState.normal)
+            self.newGameButton.transform = CGAffineTransform(scaleX: 2, y: 2)
             
             self.timerLabel.textColor = Constants.heavyAccentColor
             self.mineCountLabel.textColor = Constants.heavyAccentColor

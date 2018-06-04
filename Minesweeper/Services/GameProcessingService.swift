@@ -59,17 +59,17 @@ class GameProcessingService {
         
         if cell.hasBomb {
             self.explode(at: cell)
-        } else {
-            self.reveal(at: cell.index) { (revealedCells) in
-                self.gameListener?.cellsRevealed(revealedCells)
-            }
+            return
+        }
+
+        self.reveal(at: cell.index) { (revealedCells) in
+            self.gameListener?.cellsRevealed(revealedCells)
         }
     }
     
     private func reveal(at cellIndex: Int, revealCellHandler: @escaping CellRevealHandler) {
         self.processingQueue.async {
             if let cell = self.currentGame?.mineField.getCell(at: cellIndex) {
-                
                 // process reveal this single cell
                 self.processRevealCell(at: cellIndex)
                 
@@ -78,7 +78,6 @@ class GameProcessingService {
                 } else {
                     // Since it has a connected empty cell cluster, reveal those too
                     self.processRevealCell(cluster: cell.connectedEmptyCluster)
-                    
                     revealCellHandler(cell.connectedEmptyCluster)
                 }
             }
@@ -99,15 +98,16 @@ class GameProcessingService {
             
             if cell.hasBomb {
                 self.explode(at: cell)
-            } else {
-                cell.state = .revealed
-                
-                currentGame.mineField.updateCell(cell)
-                currentGame.mineField.safeCellsCount -= 1
-                
-                if currentGame.mineField.safeCellsCount == 0 {
-                    gameListener?.gameCompleted()
-                }
+                return
+            }
+
+            cell.state = .revealed
+            
+            currentGame.mineField.updateCell(cell)
+            currentGame.mineField.safeCellsCount -= 1
+            
+            if currentGame.mineField.safeCellsCount == 0 {
+                gameListener?.gameCompleted()
             }
         }
     }
