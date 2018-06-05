@@ -29,16 +29,18 @@
                         <color key="textColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="grass-light-icon" translatesAutoresizingMaskIntoConstraints="NO" id="ANo-ov-uh5" userLabel="Cell Cover">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="grass-light-icon" translatesAutoresizingMaskIntoConstraints="NO" id="ANo-ov-uh5" userLabel="CellCover">
                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                     </imageView>
-                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flag-icon" translatesAutoresizingMaskIntoConstraints="NO" id="3r1-wR-t42" userLabel="Flag Icon">
-                        <rect key="frame" x="5" y="5" width="40" height="40"/>
-                    </imageView>
-                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="💣" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DaC-3p-p9v" userLabel="Bomb">
-                        <rect key="frame" x="4" y="15" width="42" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🚩" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3r1-wR-t42" userLabel="FlagIcon">
+                        <rect key="frame" x="6" y="5.5" width="38" height="40"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="💣" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DaC-3p-p9v" userLabel="BombIcon">
+                        <rect key="frame" x="6" y="5" width="38" height="40"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="34"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -47,7 +49,6 @@
             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
             <constraints>
                 <constraint firstItem="wSi-X4-dak" firstAttribute="trailing" secondItem="ZTg-uK-7eu" secondAttribute="trailing" id="3So-cW-36b"/>
-                <constraint firstItem="DaC-3p-p9v" firstAttribute="trailing" secondItem="ZTg-uK-7eu" secondAttribute="trailing" constant="-5" id="3o1-fJ-dzU"/>
                 <constraint firstItem="DaC-3p-p9v" firstAttribute="centerY" secondItem="ZTg-uK-7eu" secondAttribute="centerY" id="8tg-OD-p4e"/>
                 <constraint firstItem="wSi-X4-dak" firstAttribute="bottom" secondItem="ZTg-uK-7eu" secondAttribute="bottom" id="AAJ-cp-7Io"/>
                 <constraint firstItem="wSi-X4-dak" firstAttribute="top" secondItem="ZTg-uK-7eu" secondAttribute="top" id="EBp-q8-TRk"/>
@@ -69,7 +70,6 @@
                 <constraint firstItem="ANo-ov-uh5" firstAttribute="centerY" secondItem="ZTg-uK-7eu" secondAttribute="centerY" id="lcA-UR-RyK"/>
                 <constraint firstItem="3r1-wR-t42" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="mHc-0b-L9J"/>
                 <constraint firstItem="Zoi-L5-Qrv" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" id="qDI-fb-sEL"/>
-                <constraint firstItem="DaC-3p-p9v" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" constant="5" id="zuZ-CL-iO1"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <connections>
@@ -82,8 +82,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="cherry-bomb-icon" width="60" height="60"/>
-        <image name="flag-icon" width="60" height="81"/>
         <image name="grass-light-icon" width="60" height="60"/>
     </resources>
 </document>
