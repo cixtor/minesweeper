@@ -14,8 +14,7 @@ class Constants {
     static let heavyAccentColor: UIColor = UIColor(rgb: 0x990000)
     
     static let brickTileIconName = "brick-tile-icon"
-    static let darkGrassIconName = "grass-dark-icon"
-    static let lightGrassIconName = "grass-light-icon"
+    static let fieldTileIconName = "field-tile-icon"
     
     static let defaultMines: Int = 10
     static let minimumMines: Int = 10

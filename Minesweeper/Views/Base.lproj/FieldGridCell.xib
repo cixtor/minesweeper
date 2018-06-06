@@ -29,7 +29,7 @@
                         <color key="textColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="grass-light-icon" translatesAutoresizingMaskIntoConstraints="NO" id="ANo-ov-uh5" userLabel="CellCover">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="field-tile-icon" translatesAutoresizingMaskIntoConstraints="NO" id="ANo-ov-uh5" userLabel="CellCover">
                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                     </imageView>
                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🚩" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3r1-wR-t42" userLabel="FlagIcon">
@@ -82,6 +82,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="grass-light-icon" width="60" height="60"/>
+        <image name="field-tile-icon" width="60" height="60"/>
     </resources>
 </document>

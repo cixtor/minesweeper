@@ -194,7 +194,9 @@
                                 <constraint firstItem="FDq-Vs-bAG" firstAttribute="centerY" secondItem="XaH-re-ke8" secondAttribute="centerY" id="Sm7-K8-o90"/>
                                 <constraint firstItem="rqE-pe-704" firstAttribute="centerX" secondItem="XaH-re-ke8" secondAttribute="centerX" id="Vch-1g-ZGH"/>
                                 <constraint firstItem="klV-PH-wnV" firstAttribute="leading" secondItem="pXQ-P7-eth" secondAttribute="trailing" constant="8" id="W2s-DY-n8k"/>
+                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Jnn-Bw-VL5" secondAttribute="trailing" constant="20" symbolic="YES" id="X7d-wv-cAp"/>
                                 <constraint firstItem="foe-8p-4mI" firstAttribute="centerY" secondItem="Jnn-Bw-VL5" secondAttribute="centerY" id="YBg-P9-ZYk"/>
+                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="w5Y-xl-Wy0" secondAttribute="trailing" constant="20" symbolic="YES" id="Ys5-kd-uUj"/>
                                 <constraint firstItem="Jnn-Bw-VL5" firstAttribute="bottom" secondItem="klV-PH-wnV" secondAttribute="top" constant="-48" id="e4j-n7-Qzi"/>
                                 <constraint firstItem="X51-9h-H9A" firstAttribute="leading" secondItem="XaH-re-ke8" secondAttribute="centerX" constant="32" id="hTG-vE-ocD"/>
                                 <constraint firstItem="pXQ-P7-eth" firstAttribute="leading" secondItem="XaH-re-ke8" secondAttribute="leading" constant="16" id="nR1-zJ-GtL"/>

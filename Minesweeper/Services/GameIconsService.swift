@@ -12,13 +12,11 @@ import UIKit
 class GameIconsService {
     static let shared = GameIconsService()
     
-    var boomImage: UIImage?
     var brickTileImage: UIImage?
-    var darkGrassImage: UIImage?
-    var lightGrassImage: UIImage?
+    var fieldTileImage: UIImage?
     
     fileprivate init() {
-        self.darkGrassImage = UIImage(named: Constants.darkGrassIconName)
-        self.lightGrassImage = UIImage(named: Constants.lightGrassIconName)
+        self.brickTileImage = UIImage(named: Constants.brickTileIconName)
+        self.fieldTileImage = UIImage(named: Constants.fieldTileIconName)
     }
 }

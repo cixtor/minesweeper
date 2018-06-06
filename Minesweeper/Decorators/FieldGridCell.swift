@@ -48,11 +48,11 @@ class FieldGridCell: UICollectionViewCell {
     }
     
     func reinitCell(at index: Int, fieldRows: Int) {
-        if let image = self.getCellCoverDarkGrass(row: index / fieldRows, column: index % fieldRows) {
-            self.cellCover.image = image
-        }
+//        if let image = self.getCellCoverDarkGrass(row: index / fieldRows, column: index % fieldRows) {
+//            self.cellCover.image = image
+//        }
     }
-    
+
     func setupCellView(with cell: Cell) {
         switch cell.state {
         case .untouched:
@@ -113,42 +113,12 @@ class FieldGridCell: UICollectionViewCell {
         }
     }
     
-    private func getCellCoverDarkGrass(row: Int, column: Int) -> UIImage? {
-        guard let darkGrassImage = GameIconsService.shared.darkGrassImage else { return nil }
-        
-        if row % 2 == 0 { // row starts with light color
-            if column % 2 != 0 {
-                return darkGrassImage
-            }
-        } else if column % 2 == 0 {
-            return darkGrassImage
-        }
-        
-        return nil
-    }
-    
     private func getCellCoverGrass(at fieldCoord: FieldCoord) -> UIImage? {
-        guard let darkGrassImage = GameIconsService.shared.darkGrassImage,
-            let lightGrassImage = GameIconsService.shared.lightGrassImage else {
-                return nil
+        guard let tileImage = GameIconsService.shared.fieldTileImage else {
+            return nil
         }
-        
-        let row = fieldCoord.row
-        let column = fieldCoord.column
-        
-        if row % 2 == 0 { // row starts with light color
-            if column % 2 == 0 {
-                return lightGrassImage
-            } else {
-                return darkGrassImage
-            }
-        } else { // row starts with dark color
-            if column % 2 == 0 {
-                return darkGrassImage
-            } else {
-                return lightGrassImage
-            }
-        }
+
+        return tileImage
     }
     
     private func setAdjacentBombsCount(_ count: Int) {
@@ -168,7 +138,7 @@ class FieldGridCell: UICollectionViewCell {
         self.cellCover.transform = CGAffineTransform.identity
         self.cellCover.layer.borderWidth = Constant.lightCellBorder
         
-        if let lightGrassImage = GameIconsService.shared.lightGrassImage {
+        if let lightGrassImage = GameIconsService.shared.fieldTileImage {
             self.cellCover.image = lightGrassImage
         }
         
