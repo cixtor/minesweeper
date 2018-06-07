@@ -47,9 +47,15 @@ class FieldGrid: UICollectionView {
         
         self.delegate = self
         
-        self.register(UINib(nibName: Constant.gridCellIdentifier, bundle: nil), forCellWithReuseIdentifier: Constant.gridCellIdentifier)
+        self.register(
+            UINib(nibName: Constant.gridCellIdentifier, bundle: nil),
+            forCellWithReuseIdentifier: Constant.gridCellIdentifier
+        )
         
-        let lpgr = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(gesture:)))
+        let lpgr = UILongPressGestureRecognizer(
+            target: self,
+            action: #selector(handleLongPress(gesture:))
+        )
         lpgr.minimumPressDuration = 0.2
         lpgr.delegate = self
         self.addGestureRecognizer(lpgr)
@@ -59,20 +65,27 @@ class FieldGrid: UICollectionView {
         super.init(coder: aDecoder)
     }
     
-    func setupFieldGrid(rows: Int, columns: Int,
-                        dataSource: UICollectionViewDataSource,
-                        cellActionHandler: FieldGridCellActionListener,
-                        completionHandler: FieldSetupCompletionHandler?) {
+    func setupFieldGrid(
+        rows: Int,
+        columns: Int,
+        dataSource: UICollectionViewDataSource,
+        cellActionHandler: FieldGridCellActionListener,
+        completionHandler: FieldSetupCompletionHandler?
+    ) {
         self.dataSource = dataSource
         self.cellActionHandler = cellActionHandler
         
         self.rowCount = rows
         self.columnCount = columns
         
-        let fieldWidth = (CGFloat(self.columnCount) *
-            (self.cellDimension + Constants.cellSpacing)) - Constants.cellSpacing
-        let fieldHeight = (CGFloat(self.rowCount) *
-            (self.cellDimension + Constants.cellSpacing)) - Constants.cellSpacing
+        let fieldWidth =
+            (CGFloat(self.columnCount) *
+            (self.cellDimension + Constants.cellSpacing))
+            - Constants.cellSpacing
+        let fieldHeight =
+            (CGFloat(self.rowCount) *
+            (self.cellDimension + Constants.cellSpacing))
+            - Constants.cellSpacing
         
         self.isScrollEnabled = false
         

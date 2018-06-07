@@ -52,10 +52,9 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        if let pattern = GameIconsService.shared.brickTileImage {
-//            self.view.backgroundColor = UIColor.init(patternImage: pattern)
-//        }
-        self.view.backgroundColor = UIColor.init(patternImage: GameIconsService.shared.brickTileImage!)
+        if let pattern = GameIconsService.shared.brickTileImage {
+            self.view.backgroundColor = UIColor.init(patternImage: pattern)
+        }
 
         self.setupOrientationHandler()
         

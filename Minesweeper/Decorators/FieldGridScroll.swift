@@ -34,7 +34,7 @@ class FieldGridScroll: UIScrollView {
         let newOffsetY = (self.contentOffset.y - 100) / self.zoomScale
         let newWidth = (self.bounds.width + 200) / self.zoomScale
         let newHeight = (self.bounds.height + 200) / self.zoomScale
-        
+
         return CGRect(x: newOffsetX, y: newOffsetY, width: newWidth, height: newHeight)
     }
     
@@ -46,14 +46,15 @@ class FieldGridScroll: UIScrollView {
         self.showsHorizontalScrollIndicator = false
         
         let fieldGrid = FieldGrid(frame: self.frame, collectionViewLayout: FieldGridLayout())
+
         fieldGrid.backgroundColor = UIColor.clear
         fieldGrid.layer.borderWidth = Constants.fieldBorderWidth
         fieldGrid.layer.borderColor = UIColor.black.cgColor
         fieldGrid.isScrollEnabled = false
-        self.fieldGridCollection = fieldGrid
-        
         fieldGrid.isHidden = true
-        
+
+        self.fieldGridCollection = fieldGrid
+
         self.addSubview(fieldGrid)
     }()
     
@@ -63,10 +64,13 @@ class FieldGridScroll: UIScrollView {
         let _ = setUpOnce
     }
     
-    func setupFieldGrid(rows: Int, columns: Int,
-                        dataSource: UICollectionViewDataSource,
-                        cellActionHandler: FieldGridCellActionListener,
-                        completionHandler: FieldSetupCompletionHandler?) {
+    func setupFieldGrid(
+        rows: Int,
+        columns: Int,
+        dataSource: UICollectionViewDataSource,
+        cellActionHandler: FieldGridCellActionListener,
+        completionHandler: FieldSetupCompletionHandler?
+    ) {
         guard let fieldGridCollection = self.fieldGridCollection else { return }
         
         if rows == self.rowCount, columns == self.columnCount {

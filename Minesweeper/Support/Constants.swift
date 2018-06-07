@@ -30,5 +30,5 @@ class Constants {
     
     static let defaultMinScaleFactor: CGFloat = 1
     static let defaultMaxScaleFactor: CGFloat = 3
-    static let fieldBorderWidth: CGFloat = 2
+    static let fieldBorderWidth: CGFloat = 0
 }
