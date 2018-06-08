@@ -2,10 +2,9 @@
 
 Minesweeper is a single-player puzzle video game. The objective of the game is to clear a rectangular board containing hidden "mines" or bombs without detonating any of them, with help from clues about the number of neighboring mines in each field. The game originates from the 1960s, and has been written for many computing platforms in use today. It has many variations and offshoots.
 
-<div style="height: 740px; margin-top: 50px">
-    <img src="minesweeper.gif" align="right">
-    <img src="https://upload.wikimedia.org/wikipedia/en/3/31/Minesweeper_XP.png" height="686" align="left">
-</div>
+| Minesweeper Windows XP | Minesweeper iOS 12 |
+|------------------------|--------------------|
+| <img src="https://upload.wikimedia.org/wikipedia/en/3/31/Minesweeper_XP.png" height="686"> | <img src="minesweeper.gif">
 
 ## Overview
 
