@@ -29,11 +29,11 @@ class PersistableService {
         
         notificationCenter.addObserver(self,
                                        selector: #selector(commitAllChangesToDisk),
-                                       name: Notification.Name.UIApplicationWillTerminate, object: nil)
+                                       name: UIApplication.willTerminateNotification, object: nil)
         
         notificationCenter.addObserver(self,
                                        selector: #selector(commitAllChangesToDisk),
-                                       name: Notification.Name.UIApplicationDidEnterBackground, object: nil)
+                                       name: UIApplication.didEnterBackgroundNotification, object: nil)
     }
     
     private func selectManagedContext() -> NSManagedObjectContext {
