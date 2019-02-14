@@ -6,6 +6,7 @@
 //  Copyright © 2018 yorman. All rights reserved.
 //
 
+import UIKit
 import CoreData
 
 class PersistableService {
@@ -27,13 +28,18 @@ class PersistableService {
     private func setupPersistOnAppExit() {
         let notificationCenter = NotificationCenter.default
         
-        notificationCenter.addObserver(self,
-                                       selector: #selector(commitAllChangesToDisk),
-                                       name: UIApplication.willTerminateNotification, object: nil)
+        notificationCenter.addObserver(
+            self,
+            selector: #selector(commitAllChangesToDisk),
+            name: UIApplication.willTerminateNotification,
+            object: self)
         
-        notificationCenter.addObserver(self,
-                                       selector: #selector(commitAllChangesToDisk),
-                                       name: UIApplication.didEnterBackgroundNotification, object: nil)
+        notificationCenter.addObserver(
+            self,
+            selector: #selector(commitAllChangesToDisk),
+            name: UIApplication.didEnterBackgroundNotification,
+            object: self
+        )
     }
     
     private func selectManagedContext() -> NSManagedObjectContext {
