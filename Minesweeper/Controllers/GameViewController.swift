@@ -60,7 +60,7 @@ class GameViewController: UIViewController {
         
         self.gameTimer = GameTimer(self)
         
-        if !UIAccessibilityIsReduceTransparencyEnabled() {
+        if !UIAccessibility.isReduceTransparencyEnabled {
             self.statsContainer.backgroundColor = .clear
             
             let blurEffect = UIBlurEffect(style: .dark)
@@ -86,7 +86,7 @@ class GameViewController: UIViewController {
     private func setupOrientationHandler() {
         self.currentOrientation = UIDevice.current.orientation
         
-        NotificationCenter.default.addObserver(forName: .UIDeviceOrientationDidChange, object: nil, queue: .main) { [weak self] (notification) in
+        NotificationCenter.default.addObserver(forName: UIDevice.orientationDidChangeNotification, object: nil, queue: .main) { [weak self] (notification) in
             guard let `self` = self else { return }
             
             if self.currentOrientation != UIDevice.current.orientation {
@@ -164,7 +164,7 @@ class GameViewController: UIViewController {
             self.timerLabel.transform = CGAffineTransform.identity
         }
         
-        self.newGameButton.setTitle("💣", for: UIControlState.normal)
+        self.newGameButton.setTitle("💣", for: UIControl.State.normal)
         self.newGameButton.transform = CGAffineTransform.identity
     }
     
@@ -186,7 +186,7 @@ class GameViewController: UIViewController {
         DispatchQueue.main.async {
             self.game?.state = .lost
             
-            self.newGameButton.setTitle("💥", for: UIControlState.normal)
+            self.newGameButton.setTitle("💥", for: UIControl.State.normal)
             self.newGameButton.transform = CGAffineTransform(scaleX: 2, y: 2)
             
             self.timerLabel.textColor = Constants.heavyAccentColor
@@ -259,9 +259,9 @@ class GameViewController: UIViewController {
             
             switch self.currentUserAction {
             case .flag:
-                self.actionModeButton.setTitle("🚩", for: UIControlState.normal)
+                self.actionModeButton.setTitle("🚩", for: UIControl.State.normal)
             case .tap:
-                self.actionModeButton.setTitle("🔍", for: UIControlState.normal)
+                self.actionModeButton.setTitle("🔍", for: UIControl.State.normal)
             }
         }
     }

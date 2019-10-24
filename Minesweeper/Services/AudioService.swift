@@ -60,8 +60,7 @@ class AudioService {
             if self.bkgMusicPlayer == nil, let bkgMusicFilePath = Bundle.main.path(forResource: "bkg_music_1", ofType: "mp3") {
                 let bkgMusicURL = URL(fileURLWithPath: bkgMusicFilePath)
                 do {
-                    var avPlayer = AVAudioPlayer()
-                    avPlayer = try AVAudioPlayer(contentsOf: bkgMusicURL) //, fileTypeHint: AVFileTypeMPEGLayer3
+                    let avPlayer = try AVAudioPlayer(contentsOf: bkgMusicURL) //, fileTypeHint: AVFileTypeMPEGLayer3
                     avPlayer.numberOfLoops = -1
                     avPlayer.volume = 0 // start at 0 volume
                     self.bkgMusicPlayer = avPlayer

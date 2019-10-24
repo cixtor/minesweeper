@@ -64,7 +64,7 @@ class OptionsViewController: UIViewController {
         
         self.scrollView.contentSize = CGSize(width: self.optionsContainer.frame.width, height: 400)
         
-        if !UIAccessibilityIsReduceTransparencyEnabled() {
+        if !UIAccessibility.isReduceTransparencyEnabled {
             self.view.backgroundColor = .clear
             
             let blurEffect = UIBlurEffect(style: .dark)
